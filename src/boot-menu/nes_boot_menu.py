@@ -238,17 +238,6 @@ def start_emulationstation():
     sys.exit(0)
 
 
-def start_OTP():
-
-    os.execv(
-        "/bin/bash",
-        [
-            "bash",
-            "/home/nes/OTP/run_OTP.sh"
-        ]
-    )
-
-
 def shutdown():
 
     try:
@@ -282,7 +271,6 @@ def menu():
         "Camara",
         "SeedSigner",
         "EmulationStation",
-        "2FA-OTP",
         "shutdown"
     ]
 
@@ -323,9 +311,6 @@ def menu():
                 start_emulationstation()
 
             elif selected == 3:
-                start_OTP()
-
-            elif selected == 4:
                 shutdown()
 
 
