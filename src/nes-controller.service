@@ -1,0 +1,16 @@
+[Unit]
+Description=NES GPIO Controller
+After=pigpiod.service
+Requires=pigpiod.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/nes/nes_keyboard.py
+
+Restart=no
+KillSignal=SIGTERM
+TimeoutStopSec=3
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target
